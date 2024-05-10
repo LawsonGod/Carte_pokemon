@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 
@@ -6,8 +7,8 @@ import { Pokemon } from './pokemon';
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: `app.component.html`
- 
 })
 
 export class AppComponent implements OnInit {

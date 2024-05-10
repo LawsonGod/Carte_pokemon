@@ -4,7 +4,12 @@
     (keyup.enter)="selectPokemon(input.value)"
     type="number"
 />
-<p>Vous avez selectionné le pokémon: {{pokemonSelected?.name}}</p>
+<p *ngIf="pokemonSelected">
+    Vous avez selectionné le pokémon: {{pokemonSelected?.name}}
+</p>
+<p *ngIf="!pokemonSelected">
+   Aucun pokémon n'a été trouvé.
+</p>
 <br />
 
 <p>{{pokemonList[0].name}}</p>
