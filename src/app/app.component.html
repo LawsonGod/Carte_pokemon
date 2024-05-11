@@ -1,34 +1,29 @@
 <h1 class="header center orange-text">Liste de vos pokémons</h1>
 <div class="container">
     <div class="row">
-        <div class="input-field col s7">
-            <input 
-                #input
-                (keyup.enter)="selectPokemon(input.value)"
-                type="number"
-            />
-        </div>
-
-    </div>
-    <p *ngIf="pokemonSelected" class="flow-text">
-        Vous avez selectionné le pokémon: {{pokemonSelected?.name}}
-    </p>
-    <p *ngIf="!pokemonSelected" class="flow-text">
-        Aucun pokémon n'a été trouvé.
-    </p>
-    <div class="row">
         <div *ngFor="let pokemon of pokemonList" class="col s12 m4 ">
             <div class="card horizontal">
+                <div class="card-image">
+                    <img [src]="pokemon.picture" />
+                </div>
                 <div class="card-stacked">
                     <div class="card-content">
                         <p>{{ pokemon.name }}</p>
-                        <!-- <p>{{pokemon.picture}}</p> -->
+                        <p><small>{{ pokemon.created}}</small></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+       
+    
+
 
 
 
