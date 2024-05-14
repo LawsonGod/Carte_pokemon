@@ -13,8 +13,7 @@ export class BorderCardDirective {
 
   constructor(private el: ElementRef) { 
     this.setHeight(this.defaultHeight);
-    this.setBorder(this.defaultColor);
-    console.log('Directive pkmnBorderCard instantiated');
+    this.setBorder(this.initialColor);
   }
   @Input ('pkmnBorderCard') borderColor: string;
 
