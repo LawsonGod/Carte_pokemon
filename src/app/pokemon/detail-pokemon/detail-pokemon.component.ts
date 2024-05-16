@@ -4,7 +4,6 @@ import {BorderCardDirective} from "../border-card.directive";
 import {PokemonTypeColorPipe} from "../pokemon-type-color.pipe";
 import {ActivatedRoute, RouterLink, RouterOutlet} from "@angular/router";
 import {POKEMONS} from "../mock-pokemon-list";
-import {AppRoutingModule} from "../app-routing.module";
 import {Pokemon} from "../pokemon";
 
 @Component({
