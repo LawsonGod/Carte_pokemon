@@ -7,6 +7,8 @@ import {PokemonTypeColorPipe} from "../pokemon-type-color.pipe";
 import {RouterOutlet, Router} from "@angular/router";
 
 
+
+
 @Component({
   selector: 'app-list-pokemon',
   standalone: true,
