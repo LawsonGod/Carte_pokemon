@@ -5,6 +5,7 @@ import {PokemonTypeColorPipe} from "../pokemon-type-color.pipe";
 import {ActivatedRoute, RouterLink, RouterOutlet} from "@angular/router";
 import {POKEMONS} from "../mock-pokemon-list";
 import {Pokemon} from "../pokemon";
+import {PokemonService} from "../../pokemon.service";
 
 @Component({
   imports: [CommonModule, BorderCardDirective, PokemonTypeColorPipe, RouterOutlet, RouterLink],
@@ -18,14 +19,15 @@ export class DetailPokemonComponent implements OnInit {
   pokemonList: Pokemon[];
   pokemon: Pokemon|undefined;
 
-  constructor(private route:ActivatedRoute) {}
+  constructor(
+      private route:ActivatedRoute,
+      private pokemonService: PokemonService,
+      ) {}
 
   ngOnInit(): void {
-    this.pokemonList = POKEMONS;
     const pokemonId: string|null = this.route.snapshot.paramMap.get('id');
-
     if(pokemonId){
-      this.pokemon = this.pokemonList.find(pokemon => pokemon.id == +pokemonId)
+      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
     }
   }
 
