@@ -36,7 +36,8 @@
                     </table>
                 </div>
                 <div class="card-action">
-                    <a routerLink="/pokemons">Retour</a>
+                    <a (click)="goToPokemonList()">Retour</a>
+                    <a (click)="goToEditPokemon(pokemon)">Editer</a>
                 </div>
             </div>
         </div>

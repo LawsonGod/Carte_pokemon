@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {BorderCardDirective} from "../border-card.directive";
 import {PokemonTypeColorPipe} from "../pokemon-type-color.pipe";
-import {ActivatedRoute, RouterLink, RouterOutlet} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink, RouterOutlet} from "@angular/router";
 import {POKEMONS} from "../mock-pokemon-list";
 import {Pokemon} from "../pokemon";
 import {PokemonService} from "../../pokemon.service";
@@ -21,6 +21,7 @@ export class DetailPokemonComponent implements OnInit {
 
   constructor(
       private route:ActivatedRoute,
+      private router: Router,
       private pokemonService: PokemonService,
       ) {}
 
@@ -31,6 +32,13 @@ export class DetailPokemonComponent implements OnInit {
     }
   }
 
+  goToPokemonList(){
+    this.router.navigate(['/pokemons']);
+  }
+
+  goToEditPokemon(pokemon: Pokemon){
+    this.router.navigate(['/edit/pokemon', pokemon.id]);
+  }
 }
 
 
