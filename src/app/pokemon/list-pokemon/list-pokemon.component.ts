@@ -6,6 +6,7 @@ import {BorderCardDirective} from "../border-card.directive";
 import {PokemonTypeColorPipe} from "../pokemon-type-color.pipe";
 import {RouterOutlet, Router} from "@angular/router";
 import {PokemonService} from "../../pokemon.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -13,7 +14,7 @@ import {PokemonService} from "../../pokemon.service";
 @Component({
   selector: 'app-list-pokemon',
   standalone: true,
-  imports: [CommonModule, BorderCardDirective, PokemonTypeColorPipe, RouterOutlet],
+  imports: [CommonModule, BorderCardDirective, PokemonTypeColorPipe, RouterOutlet, HttpClientModule, ],
   templateUrl: './list-pokemon.component.html',
 })
 export class ListPokemonComponent implements OnInit  {
@@ -24,7 +25,7 @@ export class ListPokemonComponent implements OnInit  {
               ) {}
 
   ngOnInit() {
-    this.pokemonList = this.pokemonService.getPokemonList();
+    this.pokemonService.getPokemonList().subscribe(pokemonList => this.pokemonList = pokemonList);
   }
 
     goToPokemon(pokemon: Pokemon) {

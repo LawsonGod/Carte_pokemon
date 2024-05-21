@@ -6,6 +6,7 @@ import {BorderCardDirective} from "./border-card.directive";
 import {PokemonTypeColorPipe} from "./pokemon-type-color.pipe";
 import {RouterModule, RouterOutlet, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
         BorderCardDirective,
         PokemonTypeColorPipe,
         ListPokemonComponent,
-        FormsModule
+        FormsModule,
+        HttpClientModule,
     ],
   exports:[
       ListPokemonComponent,

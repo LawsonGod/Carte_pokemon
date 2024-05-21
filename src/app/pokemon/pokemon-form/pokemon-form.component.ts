@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {PokemonTypeColorPipe} from "../pokemon-type-color.pipe";
 import {EditPokemonComponent} from "../edit-pokemon/edit-pokemon.component";
 import {NgForOf, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-pokemon-form',
@@ -16,6 +17,7 @@ import {NgForOf, NgIf} from "@angular/common";
     PokemonTypeColorPipe,
     NgIf,
     NgForOf,
+    HttpClientModule,
 
   ],
   templateUrl: './pokemon-form.component.html',

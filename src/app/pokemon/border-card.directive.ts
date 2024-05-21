@@ -1,4 +1,5 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @Directive({
